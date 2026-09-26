@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-polar-bg text-polar-ink antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-polar-border shadow-sm;
+  }
+  .card-hover {
+    @apply transition-shadow hover:shadow-md;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-sm transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply bg-polar-action text-white hover:bg-sky-600;
+  }
+  .btn-secondary {
+    @apply bg-white text-polar-ink border border-polar-border hover:bg-gray-50;
+  }
+  .btn-danger {
+    @apply bg-polar-danger text-white hover:bg-red-700;
+  }
+  .btn-ghost {
+    @apply text-polar-muted hover:bg-gray-100;
+  }
+  .input {
+    @apply w-full px-3.5 py-2.5 rounded-lg border border-polar-border bg-white text-sm text-polar-ink placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-polar-action focus:border-transparent;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+}
+
+/* offset-path for animated vehicles */
+.vehicle-path {
+  offset-path: path('M 60,280 C 140,200 220,220 300,160 S 460,100 540,80');
+}
